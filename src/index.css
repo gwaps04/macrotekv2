@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --color-brand-orange: #FF6B00;
+  --color-brand-black: #0F0F0F;
+  --color-brand-cream: #FEFDDF; 
+}
+
+/* WOZ LESSON: This native CSS rule makes all anchor links 
+   (like #services) transition with a smooth glide. */
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-family: var(--font-sans);
+  background-color: white;
+  color: var(--color-brand-black);
+}
