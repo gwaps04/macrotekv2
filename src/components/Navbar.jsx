@@ -4,20 +4,33 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Updated navLinks to include the Pricing section
+  // Links include Home, About Us, Services, Pricing, and Testimonials
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/#services' },
-    { name: 'Pricing', path: '/#pricing' }, // New Link
+    { name: 'Pricing', path: '/#pricing' }, 
     { name: 'Testimonials', path: '/#testimonials' },
   ];
 
+  // External booking link
   const bookingUrl = "https://sales-macrotek.vercel.app/book-now";
 
   return (
-    <nav className="bg-linear-to-r from-brand-cream/90 to-[#f5f3c4]/80 backdrop-blur-md sticky top-0 z-50 w-full px-4 py-1 shadow-sm border-b border-black/5">
-      <div className="w-full flex items-center justify-between h-16">
+    <nav className="bg-linear-to-r from-brand-cream/60 to-[#f5f3c4]/50 backdrop-blur-md sticky top-0 z-50 w-full px-4 py-1 shadow-sm border-b border-black/5 relative overflow-hidden">
+      
+      {/* WOZ DESIGN: Dotted Pattern Overlay 
+          Adds a tech-inspired dotted grid with low opacity.
+      */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-10" 
+        style={{ 
+          backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', 
+          backgroundSize: '24px 24px' 
+        }}
+      />
+
+      <div className="relative z-10 w-full flex items-center justify-between h-16">
         
         {/* 1. LOGO */}
         <div className="flex-1 flex justify-start items-center">
@@ -76,7 +89,7 @@ const Navbar = () => {
 
       {/* 4. MOBILE MENU DROPDOWN */}
       {isOpen && (
-        <div className="md:hidden bg-brand-cream border-t border-black/5 px-6 py-6 space-y-4 shadow-xl animate-in fade-in slide-in-from-top-2">
+        <div className="md:hidden bg-brand-cream/95 border-t border-black/5 px-6 py-6 space-y-4 shadow-xl animate-in fade-in slide-in-from-top-2 relative z-20">
           {navLinks.map((link) => (
             <Link
               key={link.name}

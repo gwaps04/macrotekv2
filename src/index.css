@@ -1,14 +1,16 @@
+/* WOZ FIX: Montserrat for Headings, Roboto for Body */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", "system-ui", "sans-serif";
+  --font-sans: "Roboto", "system-ui", "sans-serif";
+  --font-heading: "Montserrat", "sans-serif";
   --color-brand-orange: #FF6B00;
   --color-brand-black: #0F0F0F;
   --color-brand-cream: #FEFDDF; 
 }
 
-/* WOZ LESSON: This native CSS rule makes all anchor links 
-   (like #services) transition with a smooth glide. */
+/* Smooth glide for all anchor links */
 html {
   scroll-behavior: smooth;
 }
@@ -17,4 +19,9 @@ html {
   font-family: var(--font-sans);
   background-color: white;
   color: var(--color-brand-black);
+}
+
+/* Force headings and branding text to use Montserrat */
+h1, h2, h3, h4, h5, h6, .font-black, .uppercase {
+  font-family: var(--font-heading) !important;
 }

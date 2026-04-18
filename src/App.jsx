@@ -48,13 +48,12 @@ function App() {
                 <VisionSection />
                 <TestimonialsSection />
                 <Pricing />
-                {/* "Ready to Scale" placeholder removed from here */}
               </>
             } />
 
             <Route path="/about" element={<AboutUs />} />
             <Route path="/pricing" element={<Pricing />} />
-            <Route path="*" element={<div className="p-20 text-center uppercase font-black">Coming Soon</div>} />
+            <Route path="*" element={<div className="p-10 md:p-20 text-center uppercase font-black text-xl">Coming Soon</div>} />
           </Routes>
         </main>
 
